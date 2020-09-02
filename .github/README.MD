@@ -2,13 +2,14 @@
  
 ### Module name
 
-Insert module description
+Creates the required IAM role and policies to allow Sumologic access to read S3 Buckets.
 
 #### Example usage
 
 ```hcl-terraform
-module "example" {
-  source = "git::https://github.com/TerraFlops/module-name?ref=v1.0"
-  ...
+module "iam_role" {
+  source = "git::https://github.com/TerraFlops/sumo-logic-iam-role?ref=v1.0"
+
+  bucket_names = ["sumologic-logs-bucket","second-sumologic-logs-bucket"]
 }
 ```
